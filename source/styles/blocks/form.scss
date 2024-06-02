@@ -1,0 +1,197 @@
+.form {
+  display: grid;
+  font-family: $ff-accent;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  @media (min-width: $viewport-medium) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @media (min-width: $viewport-big) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+  }
+}
+
+.form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  @media (min-width: $viewport-big) {
+    grid-column: 1 / -1;
+  }
+
+  &--bio {
+    @media (min-width: $viewport-big) {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &--target-program {
+    @media (min-width: $viewport-big) {
+      grid-column: 2 / 3;
+    }
+  }
+}
+
+.form__list-field {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &--bio {
+    gap: 14px;
+
+    @media (min-width: $viewport-medium) {
+      gap: 20px;
+    }
+  }
+
+  &--target-program {
+    gap: 13px;
+  }
+
+  &--contacts {
+    gap: 14px;
+
+    @media (min-width: $viewport-medium) {
+      gap: 20px;
+    }
+
+    @media (min-width: $viewport-big) {
+      column-gap: 80px;
+    }
+  }
+
+  &--additionally {
+    gap: 13px;
+  }
+}
+
+.form__label {
+  &--radio,
+  &--checkbox {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  &--radio::before,
+  &--checkbox::before {
+    display: block;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    content: "";
+    border: 1px solid $bg-color-special-grey;
+  }
+
+  &--radio::after,
+  &--checkbox::after {
+    position: absolute;
+    left: 15px;
+    display: block;
+    content: "";
+    background-color: $bg-color-bright-basic;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.3s;
+  }
+
+  &--radio::after {
+    width: 13px;
+    height: 13px;
+  }
+
+  &--checkbox::after {
+    @include icon-mask(url("../../icons/stack.svg#check-mark"), 18px 14px);
+
+    width: 18px;
+    height: 14px;
+  }
+
+  &--radio::before,
+  &--radio::after {
+    border-radius: 50%;
+  }
+}
+
+// Interactive style radio and checkbox start
+.form__label--radio:hover::before,
+.form__label--checkbox:hover::before {
+  border-color: #bababa;
+}
+
+.form__input-radio:focus ~ .form__label--radio::before,
+.form__input-checkbox:focus ~ .form__label--checkbox::before {
+  border: 2px solid $bg-color-dark;
+}
+
+.form__input-radio:checked ~ .form__label--radio::after,
+.form__input-checkbox:checked ~ .form__label--checkbox::after {
+  transform: translateX(-50%) scale(1);
+}
+
+.form__input-radio:disabled ~ .form__label--radio,
+.form__input-checkbox:disabled ~ .form__label--checkbox {
+  opacity: 0.3;
+}
+// Interactive style radio and checkbox end
+
+.form__fieldset__title {
+  padding: 0;
+}
+
+.form__input-field {
+  width: 100%;
+  padding: 14px 48px 13px 15px;
+  font-size: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+  border: none;
+  border: 1px solid #e7e7e7;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: $bg-color-special-grey;
+  }
+
+  &:focus {
+    border-color: $fc-grey;
+  }
+
+  :invalid {
+    border-color: #ff8282;
+  }
+}
+
+.form__input-field-icon {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 13px;
+    transform: translateY(-50%);
+    z-index: 2;
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: $bg-color-dark;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+  }
+}
+
+.form__input-field-icon--email::after {
+  @include icon-mask(url("../../icons/stack.svg#email"), 17px 13px);
+}
+
+.form__input-field-icon--phone::after {
+  @include icon-mask(url("../../icons/stack.svg#phone"), 15px 15px);
+}
