@@ -42,7 +42,7 @@
     <main class="page-program">
       <div class="page-program__content-wrapper content-wrapper">
         <h1 class="page-program__title title title--main">Подбор программы</h1>
-        <p class="page-program__description">Заполните анкету, и мы подберем программу питания для вашего кота</p>
+        <p class="page-program__description">Заполните анкету, и мы подберем<br> программу питания для вашего кота</p>
         <form class="page-program__form form" name="form-program" action="https://echo.htmlacademy.ru/" method="post">
           <fieldset class="form__fieldset form__fieldset--bio" name="bio">
             <legend class="visually-hidden">Основные данные котика</legend>
@@ -61,7 +61,7 @@
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form__fieldset form__fieldset--target-program" name="target">
+          <fieldset class="form__fieldset form__fieldset--target-program form__fieldset--border" name="target">
             <legend class="visually-hidden">Цель программы</legend>
             <ul class="form__list-field form__list-field--target-program">
               <li class="form__elem-field">
@@ -79,7 +79,7 @@
             </ul>
           </fieldset>
           <fieldset class="form__fieldset form__fieldset--contacts" name="contacts">
-            <legend class="form__fieldset__title title title--medium-form">Контактные данные (владельца кота)</legend>
+            <legend class="form__title form__title--contacts title title--medium-form title--line-left-right">Контактные&nbsp;данные (владельца&nbsp;кота)</legend>
             <ul class="form__list-field form__list-field--contacts">
               <li class="form__elem-field">
                 <label class="form__label" for="email-id">E-mail:*</label>
@@ -96,11 +96,11 @@
             </ul>
           </fieldset>
           <fieldset class="form__fieldset form__fieldset--comment" name="comment">
-            <legend class="form__fieldset__title title title--medium-form">Комментарий</legend>
-            <textarea class="form__input-field" name="comment-input" cols="30" rows="10" placeholder="Расскажите обо всех повадках кота"></textarea>
+            <legend class="form__title form__title--comment title title--medium-form title--line-left-right">Комментарий</legend>
+            <textarea class="form__input-field form__input-field--textarea" name="comment-input" cols="30" rows="10" placeholder="Расскажите обо всех повадках кота"></textarea>
           </fieldset>
           <fieldset class="form__fieldset form__fieldset--additionally" name="additionally">
-            <legend class="form__fieldset__title title title--medium-form">Дополнительно</legend>
+            <legend class="form__title form__title--additionally title title--medium-form title--line-left-right">Дополнительно</legend>
             <ul class="form__list-field form__list-field--additionally">
               <li class="form__elem-field">
                 <input class="form__input-checkbox visually-hidden" type="checkbox" id="product-1-id" name="product-1" checked>
@@ -122,7 +122,7 @@
           </fieldset>
           <div class="form__button-wrapper">
             <button class="form__button button button--primary" type="submit">отправить заявку</button>
-            <p>* — Обязательные поля</p>
+            <p class="form__footnote">* — Обязательные поля</p>
           </div>
         </form>
       </div>

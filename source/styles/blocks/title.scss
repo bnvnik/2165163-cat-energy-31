@@ -1,4 +1,5 @@
 .title {
+  position: relative;
   font-family: $ff-accent;
   font-weight: 400;
   color: $fc-dark;
@@ -36,54 +37,15 @@
   &--medium-inner-page {
     font-size: 24px;
     line-height: 24px;
-    margin-left: -20px;
-    padding-left: 20px;
-    padding-right: 40px;
 
     @media (min-width: $viewport-medium) {
       font-size: 32px;
       line-height: 32px;
-      margin-left: 0;
-      padding-left: 40px;
     }
 
     @media (min-width: $viewport-big) {
       font-size: 40px;
       line-height: 40px;
-      margin-left: -40px;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 10px;
-      display: block;
-      height: 2px;
-      width: 100vw;
-      background-color: $bg-color-bright-basic;
-      box-shadow: 100vw 0 0 $bg-color-bright-basic;
-      z-index: -1;
-
-      @media (min-width: $viewport-medium) {
-        top: 14px;
-      }
-
-      @media (min-width: $viewport-big) {
-        top: 18px;
-      }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 0;
-      display: block;
-      height: 100%;
-      width: 100%;
-      background-color: $bg-color-primary;
-      z-index: -1;
     }
   }
 
@@ -125,5 +87,52 @@
       font-size: 20px;
       line-height: 30px;
     }
+  }
+
+  &--line-left-right {
+    margin-left: calc($page-padding-small * -1);
+    padding-left: $page-padding-small;
+    padding-right: calc($page-padding-small + 20px);
+
+    @media (min-width: $viewport-medium) {
+      margin-left: 0;
+      padding-left: calc($page-padding-medium + 10px);
+    }
+
+    @media (min-width: $viewport-big) {
+      margin-left: calc(($page-padding-big - 10px) * -1);
+    }
+  }
+
+  &--line-left-right::before,
+  &--line-left-right::after {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    display: block;
+    content: "";
+  }
+
+  &--line-left-right::before {
+    top: 10px;
+    height: 2px;
+    width: 100vw;
+    background-color: $bg-color-bright-basic;
+    box-shadow: 100vw 0 0 $bg-color-bright-basic;
+
+    @media (min-width: $viewport-medium) {
+      top: 14px;
+    }
+
+    @media (min-width: $viewport-big) {
+      top: 18px;
+    }
+  }
+
+  &--line-left-right::after {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $bg-color-primary;
   }
 }
