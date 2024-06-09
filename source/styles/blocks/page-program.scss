@@ -1,6 +1,22 @@
+.page-program {
+  padding-top: 3px;
+
+  @media (min-width: $viewport-medium) {
+    padding-top: 14px;
+  }
+
+  @media (min-width: $viewport-big) {
+    padding-top: 24px;
+  }
+}
+
 .page-program__content-wrapper {
   @media (min-width: $viewport-medium) {
     padding: 0 calc($page-padding-medium + 40px);
+  }
+
+  @media (min-width: $viewport-big) {
+    padding: 0 $page-padding-big;
   }
 }
 
@@ -17,7 +33,7 @@
 }
 
 .page-program__description {
-  margin-bottom: 39px;
+  margin-bottom: 38px;
   font-family: $ff-accent;
   font-size: 14px;
   line-height: 18px;
