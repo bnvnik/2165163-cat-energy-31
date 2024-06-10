@@ -47,17 +47,15 @@
 }
 
 .hero__title {
-  font-size: 36px;
-  line-height: 36px;
-  font-weight: 400;
   margin-top: 0;
   margin-bottom: 26px;
 
+  @media (width < $viewport-medium) {
+    color: $bg-color-primary;
+  }
+
   @media (min-width: $viewport-medium) {
     grid-column: 1 / -1;
-    font-size: 60px;
-    line-height: 60px;
-    color: $fc-dark;
     text-align: left;
     margin-bottom: 40px;
   }

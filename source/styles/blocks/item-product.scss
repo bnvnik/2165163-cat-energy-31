@@ -41,10 +41,6 @@
   margin-top: 0;
   margin-bottom: 14px;
   padding-right: 41px;
-  font-family: $ff-accent;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
   color: $fc-dark-special;
   text-transform: uppercase;
   transition: opacity 0.3s;
@@ -52,8 +48,6 @@
   @media (min-width: $viewport-medium) {
     margin-bottom: 12px;
     padding-right: 0;
-    font-size: 20px;
-    line-height: 24px;
     text-align: center;
   }
 

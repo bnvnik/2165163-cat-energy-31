@@ -12,15 +12,8 @@
 .description-section__title {
   margin-top: 0;
   margin-bottom: 40px;
-  font-family: $ff-accent;
-  font-size: 36px;
-  line-height: 40px;
-  font-weight: 400;
-  color: $fc-dark;
 
   @media (min-width: $viewport-medium) {
-    font-size: 60px;
-    line-height: 60px;
     margin-bottom: 72px;
   }
 }
