@@ -39,7 +39,7 @@
   &--target-program {
     grid-column: auto;
     padding-top: 22px;
-    padding-bottom: 19px;
+    padding-bottom: 18px;
     margin-bottom: 26px;
 
     @media (min-width: $viewport-medium) {
@@ -65,22 +65,26 @@
   }
 
   &--comment {
-    margin-bottom: 23px;
+    margin-bottom: 21px;
 
     @media (min-width: $viewport-medium) {
-      margin-bottom: 65px;
+      margin-bottom: 59px;
     }
 
     @media (min-width: $viewport-big) {
-      margin-bottom: 70px;
+      margin-bottom: 64px;
     }
   }
 
   &--additionally {
-    margin-bottom: 34px;
+    margin-bottom: 35px;
 
     @media (min-width: $viewport-medium) {
       margin-bottom: 52px;
+    }
+
+    @media (min-width: $viewport-big) {
+      margin-bottom: 60px;
     }
   }
 
@@ -115,7 +119,7 @@
   list-style-type: none;
 
   &--bio {
-    gap: 12px;
+    gap: 13px;
 
     @media (min-width: $viewport-medium) {
       gap: 20px;
@@ -127,7 +131,7 @@
   }
 
   &--contacts {
-    gap: 14px;
+    gap: 13px;
 
     @media (min-width: $viewport-medium) {
       grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -142,16 +146,17 @@
   }
 
   &--additionally {
-    gap: 13px;
+    gap: 12px;
 
     @media (min-width: $viewport-medium) {
       grid-template-columns: 1fr 1fr;
       gap: 32px;
+      column-gap: 60px;
     }
 
     @media (min-width: $viewport-big) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 32px;
+      column-gap: 79px;
     }
   }
 }
@@ -160,6 +165,10 @@
   display: flex;
   align-items: center;
   gap: 13px;
+
+  @media (min-width: $viewport-medium) {
+    gap: 14px;
+  }
 }
 
 .form__label {
@@ -172,7 +181,7 @@
     display: flex;
     gap: 15px;
     align-items: center;
-    max-width: none;
+    max-width: 100%;
 
     @media (min-width: $viewport-medium) {
       gap: 19px;
@@ -224,6 +233,12 @@
 
     width: 18px;
     height: 14px;
+
+    @media (min-width: $viewport-medium) {
+      mask-size: 29px 19px;
+      width: 29px;
+      height: 19px;
+    }
   }
 
   &--radio::before,
@@ -269,7 +284,7 @@
   }
 
   &--contacts {
-    margin-bottom: 35px;
+    margin-bottom: 34px;
 
     @media (width < $viewport-medium) {
       max-width: 220px;
@@ -287,7 +302,7 @@
       margin-bottom: 87px;
     }
 
-    @media (min-width: $viewport-medium) {
+    @media (min-width: $viewport-big) {
       margin-bottom: 78px;
     }
   }
@@ -300,7 +315,7 @@
     }
 
     @media (min-width: $viewport-big) {
-      margin-bottom: 60px;
+      margin-bottom: 57px;
     }
   }
 }
@@ -337,7 +352,8 @@
 .form__input-field {
   min-width: 50%;
   width: 100%;
-  padding: 17px 48px 10px 15px;
+  padding: 14px 48px 12px 15px;
+  font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   text-transform: inherit;
@@ -345,11 +361,28 @@
   transition: border-color 0.3s;
 
   @media (min-width: $viewport-medium) {
-    padding: 12px 48px 8px 19px;
+    padding: 11px 48px 9px 19px;
+  }
+
+  &--number {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+    }
   }
 
   &--textarea {
+    padding: 14px 14px 8px;
     resize: none;
+
+    @media (min-width: $viewport-medium) {
+      height: 175px;
+      padding: 11px 19px 12px;
+    }
+
+    @media (min-width: $viewport-big) {
+      padding-top: 9px;
+    }
   }
 
   &::placeholder {
@@ -386,14 +419,15 @@
   margin-bottom: 32px;
 
   @media (min-width: $viewport-medium) {
+    grid-column: 1 / -1;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    margin-bottom: 60px;
     align-items: center;
+    margin-bottom: 60px;
   }
 
   @media (min-width: $viewport-big) {
-    grid-column: 1 / -1;
+    gap: 78px;
     margin-bottom: 79px;
   }
 }
@@ -409,10 +443,14 @@
 }
 
 .form__footnote {
+  font-family: $ff-primary;
+  font-size: 14px;
+  line-height: 16px;
   margin: 0;
   text-transform: none;
 
   @media (min-width: $viewport-medium) {
+    font-size: 16px;
     text-align: left;
   }
 }
